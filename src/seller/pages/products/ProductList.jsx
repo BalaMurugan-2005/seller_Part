@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { 
-  Search, 
-  Filter, 
-  Download, 
-  Plus, 
+import {
+  Search,
+  Filter,
+  Download,
+  Plus,
   MoreVertical,
   Eye,
   Edit,
   Trash2,
   CheckCircle,
-  XCircle
+  XCircle,
+  AlertTriangle
 } from 'lucide-react';
 
 const ProductList = () => {
@@ -136,7 +137,7 @@ const ProductList = () => {
               className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
             />
           </div>
-          
+
           <div className="flex items-center space-x-3">
             <button className="flex items-center px-4 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50">
               <Filter size={16} className="mr-2" />
@@ -233,11 +234,10 @@ const ProductList = () => {
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center">
-                      <span className={`font-medium ${
-                        product.stock === 0 ? 'text-red-600' : 
-                        product.stock < 10 ? 'text-amber-600' : 
-                        'text-green-600'
-                      }`}>
+                      <span className={`font-medium ${product.stock === 0 ? 'text-red-600' :
+                          product.stock < 10 ? 'text-amber-600' :
+                            'text-green-600'
+                        }`}>
                         {product.stock}
                       </span>
                       {product.stock < 10 && product.stock > 0 && (
